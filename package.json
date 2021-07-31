@@ -1,0 +1,22 @@
+{
+  "name": "vue-template-populator",
+  "version": "0.0.1",
+  "description": "A Vue library to enhance the automation of methods and computed props based on your data props",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davolcu/vue-template-populator.git"
+  },
+  "keywords": [
+    "vue"
+  ],
+  "author": "davolcu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davolcu/vue-template-populator/issues"
+  },
+  "homepage": "https://github.com/davolcu/vue-template-populator#readme"
+}
