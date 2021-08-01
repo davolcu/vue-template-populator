@@ -73,5 +73,5 @@ export const getFallbackValue = (type, config) => {
         return fallbackValue;
     }
 
-    return overridenTypes[type];
+    return config.overrideFallbackMap[type];
 };
