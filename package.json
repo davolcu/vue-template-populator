@@ -1,9 +1,12 @@
 {
   "name": "vue-template-populator",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A Vue library to enhance the automation of methods and computed props based on your data props",
   "main": "index.js",
   "devDependencies": {
+    "@babel/core": "^7.11.0",
+    "@babel/eslint-parser": "^7.14.7",
+    "@babel/eslint-plugin": "^7.14.5",
     "eslint": "^7.29.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-config-prettier": "^6.10.0",
