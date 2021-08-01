@@ -56,7 +56,22 @@ export const getPropType = (value) => {
 /**
  * Returns the fallback value for the prop given its type
  * @param {String} type
+ * @param {Object} config
  */
-export const getFallbackValue = (type) => {
-    return constants.TYPE_FALLBACK_MAP[type];
+export const getFallbackValue = (type, config) => {
+    const fallbackValue = constants.TYPE_FALLBACK_MAP[type];
+
+    // If there's no custom config then return the value
+    if (!config?.overrideFallbackMap) {
+        return fallbackValue;
+    }
+
+    const overridenTypes = Object.keys(config.overrideFallbackMap);
+
+    // If the current type hasn't been override then return the value
+    if (!overridenTypes.includes(type)) {
+        return fallbackValue;
+    }
+
+    return overridenTypes[type];
 };
