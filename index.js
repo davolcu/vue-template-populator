@@ -1,2 +1,2 @@
-const index = () => 'first commit';
-export default index;
+import vuePopulator from './lib/vuePopulator.js';
+export default vuePopulator;
