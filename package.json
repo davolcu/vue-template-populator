@@ -1,6 +1,6 @@
 {
   "name": "vue-template-populator",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A Vue library to enhance the automation of methods and computed props based on your data props",
   "main": "dist/index.js",
   "devDependencies": {
