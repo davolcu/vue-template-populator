@@ -44,3 +44,19 @@ export const getPrettifiedString = (value) => {
         return splittedValue.join('');
     }, stringifiedValue);
 };
+
+/**
+ * Returns the type of the prop given its value
+ * @param {any} value
+ */
+export const getPropType = (value) => {
+    return Array.isArray(value) ? constants.ARRAY_PROP_TYPE : typeof value;
+};
+
+/**
+ * Returns the fallback value for the prop given its type
+ * @param {String} type
+ */
+export const getFallbackValue = (type) => {
+    return constants.TYPE_FALLBACK_MAP[type];
+};

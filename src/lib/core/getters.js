@@ -1,8 +1,9 @@
-import { getCapitalizedString, getPrettifiedString } from '../utils.js';
+import { constants } from '../constants.js';
+import { getCapitalizedString, getPrettifiedString, getPropType } from '../utils.js';
 
 /**
  * Create a generic boolean getter function given the context, the name and the attribute key
- * @param {Object} context
+ * @param {VueComponent} context
  * @param {String} name
  * @param {String} key
  */
@@ -16,7 +17,7 @@ const getGenericBooleanGetter = (context, name, key) => {
 
 /**
  * Create a boolean getter function for an array given the context, the name and the attribute key
- * @param {Object} context
+ * @param {VueComponent} context
  * @param {String} name
  * @param {String} key
  */
@@ -30,7 +31,7 @@ const getArrayBooleanGetter = (context, name, key) => {
 
 /**
  * Create a boolean getter given the context and the attribute key
- * @param {Object} context
+ * @param {VueComponent} context
  * @param {String} key
  */
 export const populateBooleanGetter = (context, key) => {
@@ -38,10 +39,9 @@ export const populateBooleanGetter = (context, key) => {
     const prettyKey = getCapitalizedString(getPrettifiedString(key));
     const name = `has${prettyKey}`;
     // Get the type of the prop
-    const value = context[key];
-    const propType = typeof value;
+    const propType = getPropType(context[key]);
 
-    if (propType === 'object' && Array.isArray(value)) {
+    if (propType === constants.ARRAY_PROP_TYPE) {
         // Then create the getter for the array
         getArrayBooleanGetter(context, name, key);
         return;
