@@ -1,4 +1,5 @@
-import { getCapitalizedString, getPrettifiedString } from './utils.js';
+import { populateSetter } from './core/setters.js';
+import { populateBooleanGetter } from './core/getters.js';
 
 // Default export for the Vue Populator
 const vuePopulator = (context) => {
@@ -7,18 +8,10 @@ const vuePopulator = (context) => {
 
     // Loop over the data properties of the Vue context
     Object.keys(data).forEach((key) => {
-        // First prettify the key
-        const prettyKey = getCapitalizedString(getPrettifiedString(key));
-        // Then prepare the requiered methods and computed properties
-
         // Create the setter for the current key
-        context[`set${prettyKey}`] = (newValue) => (context[key] = newValue);
+        populateSetter(context, key);
         // Create the boolean getter for the current key
-        Object.defineProperty(context, `has${prettyKey}`, {
-            get() {
-                return !!context[key];
-            },
-        });
+        populateBooleanGetter(context, key);
     });
 };
 
