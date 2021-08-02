@@ -1,5 +1,6 @@
 // Rollup plugins
 import includePaths from 'rollup-plugin-includepaths';
+import { babel } from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 
 // Output point from package.json
@@ -21,8 +22,8 @@ export default {
             format: 'cjs',
             exports: 'named',
             sourcemap: true,
-            strict: false,
+            strict: true,
         },
     ],
-    plugins: [includePaths(includePathOptions), terser()],
+    plugins: [includePaths(includePathOptions), babel({ babelHelpers: 'bundled' }), terser()],
 };
