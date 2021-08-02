@@ -19,7 +19,7 @@ export default {
     output: [
         {
             file: main,
-            format: 'cjs',
+            format: 'esm',
             exports: 'named',
             sourcemap: true,
             strict: true,
