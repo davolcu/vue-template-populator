@@ -22,6 +22,7 @@ const vuePopulator = (context, config) => {
         populateBooleanGetter(context, key);
 
         if (value && propType === constants.OBJECT_PROP_TYPE) {
+            // Create a series of getters for nested object attributes
             populateQuickAccessGetters(context, key);
         }
     });

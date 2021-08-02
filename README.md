@@ -7,3 +7,23 @@
 ## Overview
 
 `vue-template-populator` Is a Vue library to enhance the automation of methods and computed props based on your data props
+
+## Requirements
+
+Comming soon
+
+## Instalation
+
+```sh
+npm install vue-template-populator
+```
+
+or
+
+```sh
+yarn add vue-template-populator
+```
+
+## Usage
+
+Coming soon
