@@ -1,0 +1,7 @@
+  
+dist/
+node_modules/
+.history/
+.eslintrc.json
+.gitignore
+rollup.config.js
