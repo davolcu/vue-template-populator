@@ -1,4 +1,5 @@
 import vuePopulator from './lib/vuePopulator.js';
 
-// Default export the library
-export default vuePopulator;
+// Export the library
+export const VuePopulator = vuePopulator;
+export default { VuePopulator };

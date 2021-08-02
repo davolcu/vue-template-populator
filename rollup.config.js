@@ -1,29 +1,23 @@
 // Rollup plugins
-import includePaths from 'rollup-plugin-includepaths';
-import { babel } from '@rollup/plugin-babel';
+import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 
 // Output point from package.json
-import { main } from './package.json';
-
-// Options for the include path plugin
-const includePathOptions = {
-    include: {},
-    paths: ['src'],
-    external: [],
-    extensions: ['.js'],
-};
+import { main, global, module } from './package.json';
 
 export default {
     input: 'src/index.js',
     output: [
         {
             file: main,
-            format: 'esm',
+            format: 'umd',
             exports: 'named',
-            sourcemap: true,
-            strict: true,
+            name: global,
+        },
+        {
+            file: module,
+            format: 'esm',
         },
     ],
-    plugins: [includePaths(includePathOptions), babel({ babelHelpers: 'bundled' }), terser()],
+    plugins: [babel({ exclude: 'node_modules/**', presets: ['@babel/preset-env'] }), terser()],
 };
