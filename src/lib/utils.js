@@ -1,3 +1,4 @@
+// Custom imports
 import { constants } from './constants.js';
 
 /**
@@ -34,7 +35,7 @@ export const getPrettifiedString = (value) => {
         const firstCharMatch = acc.startsWith(char);
         const splittedValue = acc.split(char);
 
-        if (firstCharMatch || splittedValue.length === 1) {
+        if (firstCharMatch || splittedValue.length !== 1) {
             splittedValue.forEach((partialValue, index) => {
                 if ((!index && !firstCharMatch) || !partialValue) return;
                 splittedValue[index] = getStringFirstChar(partialValue).toUpperCase() + partialValue.slice(1);

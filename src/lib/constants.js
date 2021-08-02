@@ -11,6 +11,7 @@ export const constants = {
         undefined,
     },
     ARRAY_PROP_TYPE: 'array',
+    OBJECT_PROP_TYPE: 'object',
 };
 
 export default constants;
